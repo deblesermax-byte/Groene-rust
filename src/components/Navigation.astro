@@ -1,0 +1,91 @@
+---
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300" id="navbar">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <a href="#home" class="text-2xl font-bold text-green-700">
+        Groenerust
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="nav-link text-gray-700 hover:text-green-600 font-medium transition-colors">Home</a>
+        <a href="#about" class="nav-link text-gray-700 hover:text-green-600 font-medium transition-colors">Over Ons</a>
+        <a href="#advantages" class="nav-link text-gray-700 hover:text-green-600 font-medium transition-colors">Pluspunten</a>
+        <a href="#pricing" class="nav-link text-gray-700 hover:text-green-600 font-medium transition-colors">Tarieven</a>
+        <a href="#gallery" class="nav-link text-gray-700 hover:text-green-600 font-medium transition-colors">Galerij</a>
+        <a href="#availability" class="nav-link text-gray-700 hover:text-green-600 font-medium transition-colors">Beschikbaarheid</a>
+        <a href="#contact" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+          Contact
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-green-600 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-4">
+        <a href="#home" class="nav-link text-gray-700 hover:text-green-600 font-medium transition-colors">Home</a>
+        <a href="#about" class="nav-link text-gray-700 hover:text-green-600 font-medium transition-colors">Over Ons</a>
+        <a href="#advantages" class="nav-link text-gray-700 hover:text-green-600 font-medium transition-colors">Pluspunten</a>
+        <a href="#pricing" class="nav-link text-gray-700 hover:text-green-600 font-medium transition-colors">Tarieven</a>
+        <a href="#gallery" class="nav-link text-gray-700 hover:text-green-600 font-medium transition-colors">Galerij</a>
+        <a href="#availability" class="nav-link text-gray-700 hover:text-green-600 font-medium transition-colors">Beschikbaarheid</a>
+        <a href="#contact" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium transition-colors text-center">
+          Contact
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking a link
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href') || '');
+      if (target) {
+        const offset = 64; // Height of fixed navbar
+        const targetPosition = target.offsetTop - offset;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Add shadow to navbar on scroll
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar?.classList.add('shadow-lg');
+    } else {
+      navbar?.classList.remove('shadow-lg');
+    }
+  });
+</script>

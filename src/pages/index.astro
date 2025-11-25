@@ -1,16 +1,59 @@
 ---
-
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Advantages from '../components/Advantages.astro';
+import Gallery from '../components/Gallery.astro';
+import Pricing from '../components/Pricing.astro';
+import Availability from '../components/Availability.astro';
+import Contact from '../components/Contact.astro';
 ---
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="nl">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+
+		<!-- SEO Meta Tags -->
+		<title>Chalet Groenerust - Vakantiewoning in de Ardennen | Le Bochetay</title>
+		<meta name="description" content="Ontdek Chalet Groenerust, een gezellige vakantiewoning voor 6 personen in de Ardennen. Gelegen op het rustige domein Le Bochetay in Heure, nabij Durbuy en Marche-en-Famenne." />
+		<meta name="keywords" content="chalet ardennen, vakantiewoning belgie, huren ardennen, durbuy, marche-en-famenne, le bochetay, vakantiehuis" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Chalet Groenerust - Vakantiewoning in de Ardennen" />
+		<meta property="og:description" content="Geniet van comfort en rust in onze gezellige chalet voor 6 personen in de Ardennen." />
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="font-sans antialiased">
+		<Navigation />
+		<main>
+			<Hero />
+			<About />
+			<Advantages />
+			<Gallery />
+			<Pricing />
+			<Availability />
+			<Contact />
+		</main>
 	</body>
 </html>
+
+<style is:global>
+	body {
+		font-family: 'Inter', system-ui, -apple-system, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	html {
+		scroll-padding-top: 64px;
+	}
+</style>

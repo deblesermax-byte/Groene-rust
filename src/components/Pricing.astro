@@ -1,0 +1,76 @@
+---
+const pricingPeriods = [
+  {
+    title: "Midweek",
+    subtitle: "Maandag - Vrijdag",
+    price: "€90",
+    period: "per nacht",
+    note: "Buiten schoolvakanties en speciale periodes"
+  },
+  {
+    title: "Weekend",
+    subtitle: "Vrijdag - Maandag",
+    price: "€110",
+    period: "per nacht",
+    note: "Buiten schoolvakanties en speciale periodes"
+  },
+  {
+    title: "Schoolvakanties",
+    subtitle: "& Speciale periodes",
+    price: "€130",
+    period: "per nacht",
+    note: "Tijdens schoolvakanties en speciale periodes"
+  }
+];
+
+const extras = [
+  { item: "Elektriciteit", price: "€0,60 per kWh" },
+  { item: "Hout", price: "€10 per dag" },
+  { item: "Water", price: "€1 per nacht per persoon" },
+  { item: "Huisdier", price: "€5 per dag" },
+  { item: "Verplichte eindschoonmaak", price: "€40" }
+];
+---
+
+<section id="pricing" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-800">
+        Tarieven
+      </h2>
+      <p class="text-center text-gray-600 mb-12 text-lg">
+        Verblijf vanaf 2 nachten
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        {pricingPeriods.map((period) => (
+          <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-green-200">
+            <h3 class="text-2xl font-bold mb-2 text-gray-800">{period.title}</h3>
+            <p class="text-gray-600 mb-6">{period.subtitle}</p>
+            <div class="text-center mb-6">
+              <span class="text-5xl font-bold text-green-700">{period.price}</span>
+              <span class="text-gray-600 block mt-2">{period.period}</span>
+            </div>
+            <p class="text-sm text-gray-600 text-center italic">{period.note}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="bg-gray-50 rounded-lg p-8 shadow-lg">
+        <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">Extra's & Kosten</h3>
+        <div class="max-w-2xl mx-auto space-y-4">
+          {extras.map((extra) => (
+            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+              <span class="text-gray-700 font-medium">{extra.item}</span>
+              <span class="text-green-700 font-bold">{extra.price}</span>
+            </div>
+          ))}
+          <div class="flex justify-between items-center py-3 pt-6 border-t-2 border-green-300">
+            <span class="text-gray-800 font-bold text-lg">Borg</span>
+            <span class="text-green-700 font-bold text-xl">€150</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

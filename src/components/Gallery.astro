@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import keuken1 from '../images/keuken (1).jpg';
+import keuken2 from '../images/keuken (2).jpg';
+import zithoek from '../images/zithoek.jpg';
+import slaapkamerBeneden from '../images/slaapkamer beneden.jpg';
+import slaapkamerZolder from '../images/slaapkamer zolder.jpg';
+import kamer2p1 from '../images/kamer  met 2p bed (1).jpg';
+import kamer2p2 from '../images/kamer  met 2p bed (2).jpg';
+import badkamer1 from '../images/badkamer (1).jpg';
+import badkamer2 from '../images/badkamer (2).jpg';
+import terrasHerfst from '../images/terras in de herfst.jpg';
+import zichtWinter from '../images/zicht terras winter.jpg';
+import chaletSneeuw from '../images/chalet in de sneeuw.jpg';
+
+const galleryImages = [
+  { src: keuken1, alt: "Moderne keuken met alle gemakken", title: "Keuken" },
+  { src: keuken2, alt: "Keuken overzicht", title: "Keuken" },
+  { src: zithoek, alt: "Gezellige zithoek met houtkachel", title: "Woonkamer" },
+  { src: slaapkamerBeneden, alt: "Slaapkamer beneden", title: "Slaapkamer beneden" },
+  { src: slaapkamerZolder, alt: "Slaapkamer op de zolder", title: "Slaapkamer zolder" },
+  { src: kamer2p1, alt: "Slaapkamer met tweepersoonsbed", title: "Slaapkamer" },
+  { src: kamer2p2, alt: "Slaapkamer met tweepersoonsbed", title: "Slaapkamer" },
+  { src: badkamer1, alt: "Moderne badkamer", title: "Badkamer" },
+  { src: badkamer2, alt: "Badkamer faciliteiten", title: "Badkamer" },
+  { src: terrasHerfst, alt: "Terras in de herfst", title: "Terras" },
+  { src: zichtWinter, alt: "Uitzicht vanaf terras in de winter", title: "Winter uitzicht" },
+  { src: chaletSneeuw, alt: "Chalet in de sneeuw", title: "Winter sfeer" }
+];
+---
+
+<section id="gallery" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-800">
+        Fotogalerij
+      </h2>
+      <p class="text-center text-gray-600 mb-12 text-lg">
+        Ontdek onze gezellige chalet
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {galleryImages.map((image, index) => (
+          <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 aspect-[4/3]">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-end">
+              <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <p class="font-semibold text-lg">{image.title}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

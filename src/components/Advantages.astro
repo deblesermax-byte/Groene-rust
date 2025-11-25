@@ -1,0 +1,71 @@
+---
+const advantages = [
+  {
+    icon: "🌲",
+    title: "Rustigste ligging",
+    description: "Nog steeds de rustigste ligging op het domein, ook al is er ondertussen veel bijgebouwd."
+  },
+  {
+    icon: "🏞️",
+    title: "Uniek uitzicht",
+    description: "Uniek uitzicht op het groen vanop het terras."
+  },
+  {
+    icon: "📡",
+    title: "Moderne voorzieningen",
+    description: "WIFI, smart TV en Chrome Cast zodat je op je eigen Netflix account kan kijken."
+  },
+  {
+    icon: "🕐",
+    title: "Flexibele tijden",
+    description: "Je kan toekomen en blijven wanneer jullie wensen op de aankomst en vertrek dag, tenzij de chalet vóór of na jullie verhuurd is."
+  },
+  {
+    icon: "🔥",
+    title: "Voorverwarming",
+    description: "In de winter kan de chalet voorverwarmd worden als je een seintje geeft tegen hoe laat je aankomt."
+  },
+  {
+    icon: "🚴",
+    title: "Fietsenstalling",
+    description: "Afgesloten fietsenstalling onder het terras met elektriciteit om je fietsen op te laden."
+  },
+  {
+    icon: "🍽️",
+    title: "Restaurant op domein",
+    description: "Een nieuwe uitbater van het restaurant op het domein opent zijn deuren midden december 2025."
+  },
+  {
+    icon: "⚡",
+    title: "Oplaadpunten",
+    description: "Er zijn oplaadpunten voor je elektrische auto. Aangeduid op het plan in de infomap."
+  }
+];
+---
+
+<section id="advantages" class="py-20 bg-green-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-800">
+        Onze pluspunten
+      </h2>
+      <p class="text-center text-gray-600 mb-12 text-lg">
+        Wat maakt Groenerust zo bijzonder?
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {advantages.map((advantage) => (
+          <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="text-5xl mb-4 text-center">{advantage.icon}</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">
+              {advantage.title}
+            </h3>
+            <p class="text-gray-600 text-center leading-relaxed">
+              {advantage.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
